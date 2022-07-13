@@ -2,9 +2,8 @@
 
 pkgname=metis-st
 _pkgname=metis-st
-pkgver=1.r1062.2087ab9
-pkgrel=1
-epoch=1
+pkgver=1
+pkgrel=0
 pkgdesc="suckless's simple terminal with vim-bindings, transparency, xresources, for @metis-os "
 url='https://github.com/metis-os/metis-st'
 arch=('i686' 'x86_64')
@@ -19,11 +18,6 @@ sha1sums=('SKIP')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 
-pkgver() {
-	cd "${_pkgname}"
-	printf "%s.r%s.%s" "$(awk '/^VERSION =/ {print $3}' config.mk)" \
-		"$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
 
 prepare() {
 	cd $srcdir/${_pkgname}
